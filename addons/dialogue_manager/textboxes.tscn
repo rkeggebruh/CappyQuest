@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvhfln3tk7bi8"]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/textboxes.gd" id="1_cg05r"]
+[ext_resource type="Texture2D" uid="uid://capvigj18kifo" path="res://assets/img/tut_level/textbx.png" id="1_en0bd"]
+
+[sub_resource type="SystemFont" id="SystemFont_0xvk4"]
+font_names = PackedStringArray("Felix Titling")
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cg05r")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_en0bd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.858824, 0.670588, 0.631373, 1)
+theme_override_fonts/font = SubResource("SystemFont_0xvk4")
+text = "xfgjsftj"
+vertical_alignment = 1
+
+[node name="letterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="letterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
